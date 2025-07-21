@@ -1,0 +1,34 @@
+6. 
+a.
+Q.When I get my invite email to my application, it redirects me to “localhost:3000” – but I didn’t set this. How can I change it?
+A. The reason you’re being redirected to “localhost:3000” is because that’s set as the default App URL in your Frontegg dashboard. To fix this go to your Frontegg portal, find your application settings, and update the App URL to the address you want users to be sent to (for example, your real website or the correct localhost port like “localhost:5173”).
+b.
+Q. Why don’t I see the ‘Users’ page on my admin portal (in the app settings
+button)?
+- Bonus: I now see the page but I don’t see the “Invite User” button, why is
+that?)
+A. it’s usually because your account doesn’t have the right permissions. The ability to view or manage users is controlled by your role and permissions set by the admin in the Frontegg dashboard. Ask your admin to check your role and make sure it includes permissions to view and manage users.
+If you can see the ‘Users’ page but don’t see the “Invite User” button, it means your role allows you to view users but not to invite new ones. The “Invite User” button only appears for users who have the “invite” or “manage users” permission.
+c.
+Q. For some reason I don’t have the google login - why is that?
+A. You don’t see the Google login option because it hasn’t been enabled in your app’s authentication settings yet. To add Google login, an admin needs to go to the Frontegg dashboard and open the “Authentication” section, and enable Google as a login provider.
+d.
+Q.Explain what refresh tokens are and why we need them?
+- Bonus: Why am I getting a 401 error when I open my application to
+login? What does it mean?
+- Bonus: Explain the difference between a jwt token and a refresh token.
+How do they work together?
+A. Access tokens (the ones used to access APIs) usually expire after a short time for security reasons. When that happens, the refresh token can be used behind the scenes to get a new access token, so the user stays logged in and doesn’t have to keep entering their password.
+bonus: This can happen if you’re not logged in, your session expired, or there’s a problem with your authentication setup. This means "unauthorized" and happens when the app tries to access something but doesn't have a valid login or missing token.
+e. 
+Q. Can you please point out which API I can use to change the user's active
+tenant? How should one use it? (hint: check the API docs)
+Bonus - is there a way to do this through the SDK?
+A. To change a user's acritve tenant, you can use "Switch tenant" API provided by Frontegg API docs which is called POST /identity/resources/users/v1/me/tenant.
+bonus - yes, you can switch the active tenant using the Frontegg React SDK by calling a built-in function. no need to use the API directly. Just use the SDK’s tenant management features to change the active tenant in your app.
+f. 
+Q. f. Is there a way to block users with a certain email from signing up to a
+tenant? If yes, how?
+A.Yes, by setting up domain restrictions in the Frontegg dashboard.
+Just go to your environment’s authentication or sign-up settings and add the email domains you want to allow or block.
+
