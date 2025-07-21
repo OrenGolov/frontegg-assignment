@@ -1,0 +1,14 @@
+I followed all the official Frontegg documentation and best practices to integrate the Admin Portal into my React application:
+
+- I installed the latest version of @frontegg/react and ensured my React version was compatible.
+- I used the correct import and usage: <AdminPortal /> as a component, not as a function.
+- I checked and updated all my dependencies, and made sure there was only one version of React in my project.
+- I published and assigned the Admin Portal in the Frontegg dashboard, and confirmed my user had the correct permissions.
+- I tried all recommended troubleshooting steps, including downgrading React and the Frontegg SDK, cleaning node_modules, and testing in a new project.
+
+Despite all this, I consistently received the error:  
+"Uncaught TypeError: Cannot call a class as a function" and a black screen without the 'Admin Portal' UI builder as should be (as i did on your website -> https://portal.frontegg.com/builder/admin-portal)
+whenever I tried to render the Admin Portal.
+
+Based on my research and troubleshooting, this is almost certainly a bug or compatibility issue in the Frontegg SDK , not a mistake in my code or configuration.  
+I have documented all my steps and im ready to provide more details if needed.
